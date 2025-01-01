@@ -35,6 +35,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
+  }
+})
+
 -- Language Servers for autocompletion
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.bashls.setup{}
@@ -51,20 +60,12 @@ require'lspconfig'.lua_ls.setup{
 require'lspconfig'.jsonls.setup{}
 require'lspconfig'.docker_compose_language_service.setup{}
 require'lspconfig'.dockerls.setup{}
--- require'lspconfig'.yamlls.setup{}
--- require'lspconfig'.kotlin_language_server.setup{}
--- require'lspconfig'.cucumber_language_server.setup{}
--- require'lspconfig'.groovyls.setup{}
--- require'lspconfig'.java_language_server.setup{}
+require'lspconfig'.yamlls.setup{}
+require'lspconfig'.kotlin_language_server.setup{}
+require'lspconfig'.cucumber_language_server.setup{}
+require'lspconfig'.groovyls.setup{}
+require'lspconfig'.java_language_server.setup{}
 
-require('mason').setup({})
-require('mason-lspconfig').setup({
-  handlers = {
-    function(server_name)
-      require('lspconfig')[server_name].setup({})
-    end,
-  }
-})
 
 ---
 -- Autocompletion config
