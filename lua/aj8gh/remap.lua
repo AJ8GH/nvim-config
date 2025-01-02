@@ -48,8 +48,8 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Make current file executable
 vim.keymap.set("n", "<leader>cx", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- Toggle project explorer
-vim.keymap.set("n", "<leader>x", "<cmd>Lexplore<CR>", { silent = true })
+-- Toggle tree
+vim.keymap.set("n", "<leader>x", "<cmd>NvimTreeToggle<CR>", { silent = true })
 
 vim.keymap.set(
 "n",

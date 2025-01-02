@@ -36,6 +36,18 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+  }
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
       -- LSP Support
