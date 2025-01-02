@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
+  use("tpope/vim-surround")
   use "nvim-lua/plenary.nvim" -- Required for harpoon
   use {
     "ThePrimeagen/harpoon",
