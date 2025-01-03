@@ -13,8 +13,8 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use 'rebelot/kanagawa.nvim'
-
+  use { 'catppuccin/nvim', as = 'catppuccin' }
+  -- use 'rebelot/kanagawa.nvim'
   -- use ({
     --   'rose-pine/neovim',
     --   as = 'rose-pine',
@@ -23,16 +23,17 @@ return require('packer').startup(function(use)
       --   end
       -- })
 
+  use('petertriho/nvim-scrollbar')
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
-  use("mbbill/undotree")
-  use("tpope/vim-fugitive")
-  use("tpope/vim-surround")
-  use "nvim-lua/plenary.nvim" -- Required for harpoon
+  use('mbbill/undotree')
+  use('tpope/vim-fugitive')
+  use('tpope/vim-surround')
+  use 'nvim-lua/plenary.nvim' -- Required for harpoon
   use {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    requires = { {"nvim-lua/plenary.nvim"} }
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use {
@@ -43,11 +44,11 @@ return require('packer').startup(function(use)
   }
 
   use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+    'iamcco/markdown-preview.nvim',
+    run = function() vim.fn['mkdp#util#install']() end,
   })
 
-  use { 'akinsho/toggleterm.nvim', tag = "*", config = function()
+  use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
     require('toggleterm').setup()
   end}
 
