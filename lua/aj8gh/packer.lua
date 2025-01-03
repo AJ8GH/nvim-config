@@ -47,6 +47,10 @@ return require('packer').startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  use { 'akinsho/toggleterm.nvim', tag = "*", config = function()
+    require('toggleterm').setup()
+  end}
+
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
@@ -68,6 +72,5 @@ return require('packer').startup(function(use)
       {'rafamadriz/friendly-snippets'},
     }
   }
-
 
 end)

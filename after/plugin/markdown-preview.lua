@@ -1,0 +1,2 @@
+-- vim.keymap.set('n', '<C-s>', vim.MarkdownPreview)
+-- vim.keymap.set('n', '<C-p>', vim.MarkdownPreviewToggle)
