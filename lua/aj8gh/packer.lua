@@ -16,12 +16,32 @@ return require('packer').startup(function(use)
   use { 'catppuccin/nvim', as = 'catppuccin' }
   -- use 'rebelot/kanagawa.nvim'
   -- use ({
-    --   'rose-pine/neovim',
-    --   as = 'rose-pine',
-    --   config = function()
-      --     vim.cmd('colorscheme rose-pine')
-      --   end
-      -- })
+  --   'rose-pine/neovim',
+  --   as = 'rose-pine',
+  --   config = function()
+  --     vim.cmd('colorscheme rose-pine')
+  --   end
+  -- })
+
+  use {
+    'tzachar/local-highlight.nvim',
+    config = function()
+      require('local-highlight').setup()
+    end
+  }
+
+  use({
+    'utilyre/barbecue.nvim',
+    tag = '*',
+    requires = {
+      'SmiteshP/nvim-navic',
+      'nvim-tree/nvim-web-devicons', -- optional dependency
+    },
+    after = 'nvim-web-devicons', -- keep this if you're using NvChad
+    config = function()
+      require('barbecue').setup()
+    end,
+  })
 
   use('petertriho/nvim-scrollbar')
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})

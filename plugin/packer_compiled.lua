@@ -79,6 +79,14 @@ _G.packer_plugins = {
     path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["barbecue.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/opt/barbecue.nvim",
+    url = "https://github.com/utilyre/barbecue.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -119,6 +127,12 @@ _G.packer_plugins = {
     path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["local-highlight.nvim"] = {
+    config = { "\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20local-highlight\frequire\0" },
+    loaded = true,
+    path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/local-highlight.nvim",
+    url = "https://github.com/tzachar/local-highlight.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -148,6 +162,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
   },
   ["nvim-scrollbar"] = {
     loaded = true,
@@ -217,6 +236,19 @@ time([[Defining packer_plugins]], false)
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: local-highlight.nvim
+time([[Config for local-highlight.nvim]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20local-highlight\frequire\0", "config", "local-highlight.nvim")
+time([[Config for local-highlight.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-web-devicons ]]
+vim.cmd [[ packadd barbecue.nvim ]]
+
+-- Config for: barbecue.nvim
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0", "config", "barbecue.nvim")
+
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
