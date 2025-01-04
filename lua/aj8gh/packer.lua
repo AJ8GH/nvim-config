@@ -66,6 +66,7 @@ return require('packer').startup(function(use)
       require('nvim-autopairs').setup {}
     end,
   }
+  use 'ntpeters/vim-better-whitespace'
 
   -- Test
   use({
