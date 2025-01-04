@@ -7,29 +7,14 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Navigation
+  use 'nvim-lua/plenary.nvim' -- Required for harpoon
+  use('petertriho/nvim-scrollbar')
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
     -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-
-  use { 'catppuccin/nvim', as = 'catppuccin' }
-  -- use 'rebelot/kanagawa.nvim'
-  -- use ({
-  --   'rose-pine/neovim',
-  --   as = 'rose-pine',
-  --   config = function()
-  --     vim.cmd('colorscheme rose-pine')
-  --   end
-  -- })
-
-  use {
-    'tzachar/local-highlight.nvim',
-    config = function()
-      require('local-highlight').setup()
-    end
-  }
-
   use({
     'utilyre/barbecue.nvim',
     tag = '*',
@@ -42,41 +27,115 @@ return require('packer').startup(function(use)
       require('barbecue').setup()
     end,
   })
-
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
-
-  use('petertriho/nvim-scrollbar')
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('nvim-treesitter/playground')
-  use('mbbill/undotree')
-  use('tpope/vim-fugitive')
-  use('tpope/vim-surround')
-  use 'nvim-lua/plenary.nvim' -- Required for harpoon
   use {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional
     },
   }
+  use 'karb94/neoscroll.nvim'
 
+  -- Color
+  -- use 'shaunsingh/nord.nvim'
+  use { 'catppuccin/nvim', as = 'catppuccin' }
+  -- use 'rebelot/kanagawa.nvim'
+  use 'nvim-tree/nvim-web-devicons'
+  use {
+    'tzachar/local-highlight.nvim',
+    config = function()
+      require('local-highlight').setup()
+    end
+  }
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('nvim-treesitter/playground')
+
+  -- Tools
+  use('mbbill/undotree')
+  use('tpope/vim-fugitive')
+  use('tpope/vim-surround')
   use({
     'iamcco/markdown-preview.nvim',
     run = function() vim.fn['mkdp#util#install']() end,
   })
-
   use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
     require('toggleterm').setup()
   end}
+  use {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = function()
+      require('nvim-autopairs').setup {}
+    end
+  }
 
+  -- Test
+  use({
+    'nvim-neotest/neotest',
+    requires = {
+      'nvim-neotest/neotest-go',
+      'nvim-neotest/nvim-nio',
+      'nvim-lua/plenary.nvim',
+      'antoinemadec/FixCursorHold.nvim',
+      'nvim-treesitter/nvim-treesitter'
+    },
+    config = function()
+      -- get neotest namespace (api call creates or returns namespace)
+      local neotest_ns = vim.api.nvim_create_namespace('neotest')
+      vim.diagnostic.config({
+        virtual_text = {
+          format = function(diagnostic)
+            local message =
+            diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+            return message
+          end,
+        },
+      }, neotest_ns)
+      require('neotest').setup({
+        -- your neotest config here
+        adapters = {
+          require('neotest-go'),
+        },
+      })
+    end,
+  })
+
+  -- Debugger
+  use {
+    'mfussenegger/nvim-dap',
+    requires = {
+      'leoluz/nvim-dap-go',
+      'rcarriga/nvim-dap-ui',
+      'theHamsta/nvim-dap-virtual-text',
+      'nvim-neotest/nvim-nio',
+      'williamboman/mason.nvim',
+    },
+    config = function()
+      require("dapui").setup()
+      require("dap-go").setup()
+    end,
+  }
+  use 'mfussenegger/nvim-dap-python'
+  use {
+    'rcarriga/nvim-dap-ui',
+    requires = {
+      'mfussenegger/nvim-dap',
+      "nvim-neotest/nvim-nio"
+    }
+  }
+  use 'theHamsta/nvim-dap-virtual-text'
+  use {'Weissle/persistent-breakpoints.nvim'}
+  use 'leoluz/nvim-dap-go'
+
+  -- LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
