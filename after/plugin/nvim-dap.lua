@@ -11,7 +11,8 @@ vim.keymap.set("n", "<space>?", function()
 end)
 
 vim.keymap.set("n", "<C-]>", dap.step_over)
-vim.keymap.set("n", "<C-[>", dap.continue)
+vim.keymap.set("n", "<leader>bg", dap.continue)
+vim.keymap.set("n", "<C-.>", dap.continue)
 vim.keymap.set("n", "<leader>br", dap.toggle_breakpoint)
 vim.keymap.set("n", "<C-=>", dap.toggle_breakpoint)
 vim.keymap.set("n", "<C-'>", dap_go.debug_test)
@@ -39,4 +40,3 @@ end
 dap.listeners.before.event_exited.dapui_config = function()
   ui.close()
 end
-

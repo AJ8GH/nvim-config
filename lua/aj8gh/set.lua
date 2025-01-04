@@ -34,3 +34,4 @@ vim.opt.cursorcolumn = true
 vim.opt.list = true
 vim.opt.listchars='space:·,tab:→ '
 
+vim.o.autowriteall = true
