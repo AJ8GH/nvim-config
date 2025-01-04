@@ -14,11 +14,11 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
 vim.keymap.set("n", "<leader>vwm", function()
-  require("vim-with-me").StartVimWithMe()
+require("vim-with-me").StartVimWithMe()
 end)
 
 vim.keymap.set("n", "<leader>svwm", function()
-  require("vim-with-me").StopVimWithMe()
+require("vim-with-me").StopVimWithMe()
 end)
 
 -- Put preserving buffer
@@ -76,9 +76,11 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
-  vim.cmd("so")
+vim.cmd("so")
 end)
 
 vim.keymap.set('n', '<ScrollWheelLeft>', '<ScrollWheelRight>')
 vim.keymap.set('n', '<ScrollWheelRight>', '<ScrollWheelLeft>')
 
+-- change working directory to the location of the current file
+vim.keymap.set('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')

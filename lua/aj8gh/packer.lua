@@ -23,9 +23,6 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional dependency
     },
     after = 'nvim-web-devicons', -- keep this if you're using NvChad
-    config = function()
-      require('barbecue').setup()
-    end,
   })
   use {
     'nvim-lualine/lualine.nvim',
@@ -49,12 +46,7 @@ return require('packer').startup(function(use)
   use { 'catppuccin/nvim', as = 'catppuccin' }
   -- use 'rebelot/kanagawa.nvim'
   use 'nvim-tree/nvim-web-devicons'
-  use {
-    'tzachar/local-highlight.nvim',
-    config = function()
-      require('local-highlight').setup()
-    end
-  }
+  use { 'tzachar/local-highlight.nvim' }
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
@@ -66,15 +58,13 @@ return require('packer').startup(function(use)
     'iamcco/markdown-preview.nvim',
     run = function() vim.fn['mkdp#util#install']() end,
   })
-  use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
-    require('toggleterm').setup()
-  end}
+  use { 'akinsho/toggleterm.nvim', tag = '*' }
   use {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     config = function()
       require('nvim-autopairs').setup {}
-    end
+    end,
   }
 
   -- Test
@@ -87,25 +77,6 @@ return require('packer').startup(function(use)
       'antoinemadec/FixCursorHold.nvim',
       'nvim-treesitter/nvim-treesitter'
     },
-    config = function()
-      -- get neotest namespace (api call creates or returns namespace)
-      local neotest_ns = vim.api.nvim_create_namespace('neotest')
-      vim.diagnostic.config({
-        virtual_text = {
-          format = function(diagnostic)
-            local message =
-            diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
-            return message
-          end,
-        },
-      }, neotest_ns)
-      require('neotest').setup({
-        -- your neotest config here
-        adapters = {
-          require('neotest-go'),
-        },
-      })
-    end,
   })
 
   -- Debugger
@@ -118,10 +89,6 @@ return require('packer').startup(function(use)
       'nvim-neotest/nvim-nio',
       'williamboman/mason.nvim',
     },
-    config = function()
-      require("dapui").setup()
-      require("dap-go").setup()
-    end,
   }
   use 'mfussenegger/nvim-dap-python'
   use {

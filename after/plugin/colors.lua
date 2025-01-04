@@ -9,12 +9,13 @@ function Color(color)
   -- vim.g.nord_uniform_diff_background = true
   -- vim.g.nord_bold = true
 
-  require("catppuccin").setup({
-    flavour = "frappe", -- latte, frappe, macchiato, mocha
-  })
 
  --  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
  --  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
+
+require("catppuccin").setup({
+  flavour = "frappe", -- latte, frappe, macchiato, mocha
+})
 
 Color()

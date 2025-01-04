@@ -13,18 +13,23 @@ require("nvim-tree").setup({
   sort = {
     sorter = "case_sensitive",
   },
-view = {
-  width = 30,
-},
-renderer = {
-  group_empty = true,
-},
-filters = {
-  dotfiles = true,
-},
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  }
 })
 
 -- Toggle tree
 vim.keymap.set("n", "<leader>x", "<cmd>NvimTreeToggle<CR>", { silent = true })
 vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeFocus<CR>", { silent = true })
-
+vim.g.nvim_tree_respect_buf_cwd = 1
