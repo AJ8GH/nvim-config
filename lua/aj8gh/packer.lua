@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
   }
   use 'karb94/neoscroll.nvim'
 
-  -- Color
+  -- Color scheme
   -- use 'shaunsingh/nord.nvim'
   use { 'catppuccin/nvim', as = 'catppuccin' }
   -- use 'rebelot/kanagawa.nvim'
@@ -66,11 +66,11 @@ return require('packer').startup(function(use)
       require('nvim-autopairs').setup {}
     end,
   }
-  -- use 'ntpeters/vim-better-whitespace'
-  -- use {
-  --   'mg979/vim-visual-multi',
-  --   branch= 'master',
-  -- }
+  use 'ntpeters/vim-better-whitespace'
+  use {
+    'mg979/vim-visual-multi',
+    branch= 'master',
+  }
 
   -- Test
   use({

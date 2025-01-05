@@ -284,6 +284,11 @@ _G.packer_plugins = {
     path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-better-whitespace"] = {
+    loaded = true,
+    path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/vim-better-whitespace",
+    url = "https://github.com/ntpeters/vim-better-whitespace"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -293,6 +298,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
   }
 }
 
