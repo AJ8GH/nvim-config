@@ -34,16 +34,16 @@ return require('packer').startup(function(use)
     branch = 'harpoon2',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
-  }
+  -- use {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v3.x",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+  --     "MunifTanjim/nui.nvim",
+  --     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+  --   }
+  -- }
   use 'karb94/neoscroll.nvim'
   use {'kevinhwang91/nvim-bqf', ft = 'qf'}
   use {
@@ -56,6 +56,8 @@ return require('packer').startup(function(use)
   -- Color scheme
   -- use 'shaunsingh/nord.nvim'
   -- use 'rebelot/kanagawa.nvim'
+  -- use { 'navarasu/onedark.nvim', as = 'onedark' }
+  -- use {'EdenEast/nightfox.nvim', as = 'nightfox'}
   use { 'catppuccin/nvim', as = 'catppuccin' }
   use 'nvim-tree/nvim-web-devicons'
   use { 'tzachar/local-highlight.nvim' }
@@ -75,9 +77,9 @@ return require('packer').startup(function(use)
   use {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
-    config = function()
+    config =  function()
       require('nvim-autopairs').setup {}
-    end,
+    end
   }
   use 'ntpeters/vim-better-whitespace'
   use {
