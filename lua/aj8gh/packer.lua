@@ -48,7 +48,6 @@ return require('packer').startup(function(use)
     end
   }
 
-
   -- Color scheme
   -- use 'shaunsingh/nord.nvim'
   -- use 'rebelot/kanagawa.nvim'
@@ -80,6 +79,8 @@ return require('packer').startup(function(use)
     'mg979/vim-visual-multi',
     branch= 'master',
   }
+  use { 'rmagatti/auto-session' }
+  use { 'Pocco81/auto-save.nvim' }
 
   -- Test
   use({

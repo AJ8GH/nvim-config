@@ -84,6 +84,16 @@ _G.packer_plugins = {
     path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["auto-save.nvim"] = {
+    loaded = true,
+    path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
+    url = "https://github.com/Pocco81/auto-save.nvim"
+  },
+  ["auto-session"] = {
+    loaded = true,
+    path = "/Users/adamjonas/.local/share/nvim/site/pack/packer/start/auto-session",
+    url = "https://github.com/rmagatti/auto-session"
+  },
   ["barbecue.nvim"] = {
     load_after = {},
     loaded = true,
