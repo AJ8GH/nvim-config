@@ -40,6 +40,14 @@ return require('packer').startup(function(use)
     },
   }
   use 'karb94/neoscroll.nvim'
+  use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+  use {
+    'junegunn/fzf',
+    run = function()
+      vim.fn['fzf#install']()
+    end
+  }
+
 
   -- Color scheme
   -- use 'shaunsingh/nord.nvim'
@@ -54,6 +62,7 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use('tpope/vim-surround')
+  use('tpope/vim-repeat')
   use({
     'iamcco/markdown-preview.nvim',
     run = function() vim.fn['mkdp#util#install']() end,
