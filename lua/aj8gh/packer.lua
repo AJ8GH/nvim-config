@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Navigation
+  use 'rmagatti/auto-session'
   use 'nvim-lua/plenary.nvim' -- Required for harpoon
   use('petertriho/nvim-scrollbar')
   use {
@@ -34,10 +35,14 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {
-    'nvim-tree/nvim-tree.lua',
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
     requires = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
   }
   use 'karb94/neoscroll.nvim'
   use {'kevinhwang91/nvim-bqf', ft = 'qf'}
@@ -79,7 +84,6 @@ return require('packer').startup(function(use)
     'mg979/vim-visual-multi',
     branch= 'master',
   }
-  use { 'rmagatti/auto-session' }
   use { 'Pocco81/auto-save.nvim' }
 
   -- Test
