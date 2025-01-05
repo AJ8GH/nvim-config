@@ -80,7 +80,6 @@ return require('packer').startup(function(use)
     'mg979/vim-visual-multi',
     branch= 'master',
   }
-  use { 'numToStr/Comment.nvim' }
 
   -- Test
   use({
