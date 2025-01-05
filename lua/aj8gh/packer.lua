@@ -43,8 +43,8 @@ return require('packer').startup(function(use)
 
   -- Color scheme
   -- use 'shaunsingh/nord.nvim'
-  use { 'catppuccin/nvim', as = 'catppuccin' }
   -- use 'rebelot/kanagawa.nvim'
+  use { 'catppuccin/nvim', as = 'catppuccin' }
   use 'nvim-tree/nvim-web-devicons'
   use { 'tzachar/local-highlight.nvim' }
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
