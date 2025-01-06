@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+
   -- Navigation
   use 'rmagatti/auto-session'
   use 'nvim-lua/plenary.nvim' -- Required for harpoon
@@ -53,6 +54,7 @@ return require('packer').startup(function(use)
     end
   }
 
+
   -- Color scheme
   -- use 'shaunsingh/nord.nvim'
   -- use 'rebelot/kanagawa.nvim'
@@ -64,9 +66,14 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
 
+
+  -- Git
+  use('tpope/vim-fugitive')
+  use 'lewis6991/gitsigns.nvim'
+
+
   -- Tools
   use('mbbill/undotree')
-  use('tpope/vim-fugitive')
   use('tpope/vim-surround')
   use('tpope/vim-repeat')
   use({
@@ -88,6 +95,7 @@ return require('packer').startup(function(use)
   }
   use { 'Pocco81/auto-save.nvim' }
 
+
   -- Test
   use({
     'nvim-neotest/neotest',
@@ -99,6 +107,7 @@ return require('packer').startup(function(use)
       'nvim-treesitter/nvim-treesitter'
     },
   })
+
 
   -- Debugger
   use {
@@ -122,6 +131,7 @@ return require('packer').startup(function(use)
   use 'theHamsta/nvim-dap-virtual-text'
   use { 'Weissle/persistent-breakpoints.nvim' }
   use 'leoluz/nvim-dap-go'
+
 
   -- LSP
   use {
