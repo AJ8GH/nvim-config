@@ -79,6 +79,7 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
+vim.keymap.set("n", "<leader>pa", "<cmd>PackerSync<CR>")
 
 vim.keymap.set('n', '<ScrollWheelLeft>', '<ScrollWheelRight>')
 vim.keymap.set('n', '<ScrollWheelRight>', '<ScrollWheelLeft>')

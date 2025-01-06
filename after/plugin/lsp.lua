@@ -64,7 +64,7 @@ require'lspconfig'.yamlls.setup{}
 require'lspconfig'.kotlin_language_server.setup{}
 require'lspconfig'.cucumber_language_server.setup{}
 require'lspconfig'.groovyls.setup{}
--- require'lspconfig'.java_language_server.setup{}
+require'lspconfig'.jdtls.setup{}
 
 
 ---
