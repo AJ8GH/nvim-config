@@ -134,6 +134,7 @@ return require('packer').startup(function(use)
 
 
   -- LSP
+  -- use 'mfussenegger/nvim-jdtls'
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
